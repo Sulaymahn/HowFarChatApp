@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.IO;
+﻿using HowFar.CustomElements;
 using HowFar.CustomInterfaces;
+using System;
 using Xamarin.Forms;
 
 namespace HowFar.Models
@@ -10,6 +8,9 @@ namespace HowFar.Models
     public class Storage
     {
         public IStorage storage = DependencyService.Get<IStorage>();
+
+        public event EventHandler<UsernameChangedEventArgs> usernameChanged;
+
         private static Storage instance;
 
         private Storage()
@@ -34,6 +35,7 @@ namespace HowFar.Models
         public void SetUsername(string name)
         {
             storage.SetUsername(name);
+            usernameChanged?.Invoke(this, new UsernameChangedEventArgs { Username=name});
         }
     }
 }

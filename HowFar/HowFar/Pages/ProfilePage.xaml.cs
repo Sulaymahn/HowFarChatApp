@@ -19,8 +19,7 @@ namespace HowFar.Pages
             if (!string.IsNullOrWhiteSpace(usernameEntry.Text))
             {
                 Storage.GetInstance().SetUsername(usernameEntry.Text);
-                await Navigation.PushAsync(new MenuPage(), true);
-                Navigation.RemovePage(this);
+                await Navigation.PopToRootAsync(true);
             }
             else
             {

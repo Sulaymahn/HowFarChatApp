@@ -20,6 +20,10 @@ namespace HowFar.Pages
         {
             InitializeComponent();
             RetrieveData();
+            if (((App)App.Current).Username == string.Empty)
+            {
+                Navigation.PushModalAsync(new ProfilePage(), true);
+            }
         }
 
         protected override void OnAppearing()
@@ -44,6 +48,11 @@ namespace HowFar.Pages
         {
             this.sender.Send(new Message { Sender = ((App)App.Current).Username, Content = searchEntry.Text });
             searchEntry.Text = "";
+        }
+
+        private async void Profile_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new ProfilePage(), true);
         }
     }
 }

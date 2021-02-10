@@ -8,6 +8,8 @@
              NavigationPage.HasNavigationBar="True"
              Title="HowFar">
     <StackLayout>
+        <Button Text="Profile"
+                Clicked="Profile_Clicked"/>
         <CollectionView x:Name="collectionView">
             <CollectionView.ItemTemplate>
                 <DataTemplate>

@@ -6,19 +6,18 @@ namespace HowFar
 {
     public partial class App : Application
     {
-        public readonly string Username = Storage.GetInstance().GetUsername();
+        public string Username = Storage.GetInstance().GetUsername();
 
         public App()
         {
             InitializeComponent();
-            if(Username == string.Empty)
-            {
-                MainPage = new ProfilePage();
-            }
-            else
-            {
-                MainPage = new NavigationPage(new MenuPage());
-            }
+            Storage.GetInstance().usernameChanged += App_usernameChanged;
+            MainPage = new NavigationPage(new MenuPage());
+        }
+
+        private void App_usernameChanged(object sender, CustomElements.UsernameChangedEventArgs e)
+        {
+            Username = e.Username;
         }
 
         protected override void OnStart()
