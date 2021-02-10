@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HowFar.Models;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -13,9 +14,18 @@ namespace HowFar.Pages
             confirmButton.Clicked += ConfirmClicked;
         }
 
-        private void ConfirmClicked(object sender, EventArgs e)
+        private async void ConfirmClicked(object sender, EventArgs e)
         {
-            ((App)Application.Current).Username = usernameEntry.Text;
+            if (!string.IsNullOrWhiteSpace(usernameEntry.Text))
+            {
+                Storage.GetInstance().SetUsername(usernameEntry.Text);
+                await Navigation.PushAsync(new MenuPage(), true);
+                Navigation.RemovePage(this);
+            }
+            else
+            {
+                await DisplayAlert("Unassigned Username", "Please input a username before you continue", "Okay");
+            }
         }
     }
 }

@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using HowFar.Models;
@@ -47,7 +42,7 @@ namespace HowFar.Pages
 
         private void searchEntry_Completed(object sender, EventArgs e)
         {
-            this.sender.Send(new Message { Sender = Username, Content = searchEntry.Text });
+            this.sender.Send(new Message { Sender = ((App)App.Current).Username, Content = searchEntry.Text });
             searchEntry.Text = "";
         }
     }

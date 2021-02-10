@@ -1,6 +1,4 @@
-﻿using System;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+﻿using Xamarin.Forms;
 using HowFar.Pages;
 using HowFar.Models;
 
@@ -13,8 +11,14 @@ namespace HowFar
         public App()
         {
             InitializeComponent();
-
-            MainPage = new NavigationPage(new MenuPage());
+            if(Username == string.Empty)
+            {
+                MainPage = new ProfilePage();
+            }
+            else
+            {
+                MainPage = new NavigationPage(new MenuPage());
+            }
         }
 
         protected override void OnStart()

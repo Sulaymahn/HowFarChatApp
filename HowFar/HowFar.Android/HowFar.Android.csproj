@@ -65,6 +65,7 @@
     <Compile Include="Helpers\AppDataHelper.cs" />
     <Compile Include="Implementations\MessageEventArgs.cs" />
     <Compile Include="Implementations\MessageSender.cs" />
+    <Compile Include="Implementations\StorageDroid.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
