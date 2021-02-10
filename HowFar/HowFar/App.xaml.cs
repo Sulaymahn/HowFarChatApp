@@ -2,11 +2,14 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using HowFar.Pages;
+using HowFar.Models;
 
 namespace HowFar
 {
     public partial class App : Application
     {
+        public readonly string Username = Storage.GetInstance().GetUsername();
+
         public App()
         {
             InitializeComponent();
@@ -16,6 +19,7 @@ namespace HowFar
 
         protected override void OnStart()
         {
+
         }
 
         protected override void OnSleep()

@@ -7,30 +7,28 @@
              x:Class="HowFar.Pages.MenuPage"
              NavigationPage.HasNavigationBar="True"
              Title="HowFar">
-    <RefreshView>
-        <StackLayout>
-                <CollectionView x:Name="collectionView">
-                <CollectionView.ItemTemplate>
-                    <DataTemplate>
-                        <Frame HasShadow="False"
+    <StackLayout>
+        <CollectionView x:Name="collectionView">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame HasShadow="False"
                                Padding="10"
                                HeightRequest="50">
-                            <Grid RowDefinitions="*, 20">
-                                <Label Grid.Row="0"
+                        <Grid RowDefinitions="*, 20">
+                            <Label Grid.Row="0"
                                        Text="{Binding Content}"
                                        FontSize="16"/>
-                                <Label Grid.Row="1" 
+                            <Label Grid.Row="1" 
                                        Text="{Binding Sender, StringFormat='sent by {0}'}"
                                        FontSize="11"/>
-                            </Grid>
-                        </Frame>
-                    </DataTemplate>
-                    </CollectionView.ItemTemplate>
-                </CollectionView>
-                <Entry x:Name="searchEntry"
+                        </Grid>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        <Entry x:Name="searchEntry"
                        Placeholder="message.."
                        VerticalOptions="End"
                        Completed="searchEntry_Completed"/>
-            </StackLayout>
-    </RefreshView>
+    </StackLayout>
 </ContentPage>

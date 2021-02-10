@@ -18,6 +18,7 @@ namespace HowFar.Pages
         private readonly ISender sender = DependencyService.Get<ISender>();
         private readonly IListener listener = DependencyService.Get<IListener>();
 
+
         public ObservableCollection<Message> messageList = new ObservableCollection<Message>();
 
         public MenuPage()
@@ -46,7 +47,7 @@ namespace HowFar.Pages
 
         private void searchEntry_Completed(object sender, EventArgs e)
         {
-            this.sender.Send(new Message { Sender = "Sulaiman", Content = searchEntry.Text });
+            this.sender.Send(new Message { Sender = Username, Content = searchEntry.Text });
             searchEntry.Text = "";
         }
     }
