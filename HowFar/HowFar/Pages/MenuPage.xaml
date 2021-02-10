@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="HowFar.Pages.MenuPage"
+             NavigationPage.HasNavigationBar="True"
+             Title="HowFar">
+    <RefreshView>
+        <StackLayout>
+                <CollectionView x:Name="collectionView">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame HasShadow="False"
+                               Padding="10"
+                               HeightRequest="50">
+                            <Grid RowDefinitions="*, 20">
+                                <Label Grid.Row="0"
+                                       Text="{Binding Content}"
+                                       FontSize="16"/>
+                                <Label Grid.Row="1" 
+                                       Text="{Binding Sender, StringFormat='sent by {0}'}"
+                                       FontSize="11"/>
+                            </Grid>
+                        </Frame>
+                    </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+                <Entry x:Name="searchEntry"
+                       Placeholder="message.."
+                       VerticalOptions="End"
+                       Completed="searchEntry_Completed"/>
+            </StackLayout>
+    </RefreshView>
+</ContentPage>

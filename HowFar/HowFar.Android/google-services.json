@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "100505573685",
+    "project_id": "chatcars-b8cdb",
+    "storage_bucket": "chatcars-b8cdb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:100505573685:android:3a228f5115ef8d2d8d547c",
+        "android_client_info": {
+          "package_name": "com.liquidspin.howfar"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "100505573685-lr0d6pubolgt2bbnkcuk0i9cpp8p2hjh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAWByCwEBcBCHeuc30GbQWuwmXaWGMYeHQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "100505573685-lr0d6pubolgt2bbnkcuk0i9cpp8p2hjh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
