@@ -46,7 +46,7 @@ namespace HowFar.Pages
 
         private void searchEntry_Completed(object sender, EventArgs e)
         {
-            this.sender.Send(new Message { Sender = ((App)App.Current).Username, Content = searchEntry.Text });
+            this.sender.Send(new Message(true) { Sender = ((App)App.Current).Username, Content = searchEntry.Text });
             searchEntry.Text = "";
         }
 

@@ -6,6 +6,39 @@
              mc:Ignorable="d"
              x:Class="HowFar.App">
     <Application.Resources>
-
+        <DataTemplate x:Key="RecievedMessageTemplate">
+            <Frame CornerRadius="10"
+                   HasShadow="False"
+                   BackgroundColor="#FF4081"
+                   Padding="10">
+                <StackLayout>
+                    <Label Text="{Binding Sender}"
+                           HorizontalOptions="StartAndExpand"
+                           FontAttributes="Bold"
+                           TextColor="GhostWhite"/>
+                    <Label Text="{Binding Content}"
+                           HorizontalOptions="StartAndExpand"
+                           TextColor="GhostWhite"/>
+                    <Label Text="{Binding Time}"
+                           HorizontalOptions="EndAndExpand"
+                           TextColor="GhostWhite"/>
+                </StackLayout>
+            </Frame>
+        </DataTemplate>
+        <DataTemplate x:Key="SentMessageTemplate">
+            <Frame CornerRadius="0"
+                   HasShadow="False"
+                   BackgroundColor="#FF4081"
+                   Padding="10">
+                <StackLayout>
+                    <Label Text="{Binding Content}"
+                           HorizontalOptions="StartAndExpand"
+                           TextColor="GhostWhite"/>
+                    <Label Text="{Binding Time}"
+                           HorizontalOptions="EndAndExpand"
+                           TextColor="GhostWhite"/>
+                </StackLayout>
+            </Frame>
+        </DataTemplate>
     </Application.Resources>
 </Application>

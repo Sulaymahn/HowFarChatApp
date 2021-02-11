@@ -27,6 +27,8 @@ namespace HowFar.Droid.Implementations
             HashMap messageInfo = new HashMap();
             messageInfo.Put("sender", message.Sender);
             messageInfo.Put("content", message.Content);
+            messageInfo.Put("time", message.Time);
+            messageInfo.Put("date", message.Date);
 
             DatabaseReference messageReference = AppDataHelper.GetDatabase().GetReference("Chat").Push();
             await messageReference.SetValueAsync(messageInfo);

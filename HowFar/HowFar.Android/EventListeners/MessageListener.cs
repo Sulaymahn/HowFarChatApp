@@ -38,10 +38,12 @@ namespace HowFar.Droid.EventListeners
                 messages.Clear();
                 foreach(DataSnapshot messageData in child)
                 {
-                    Models.Message message = new Models.Message();
+                    Models.Message message = new Models.Message(false);
                     message.ID = messageData.Key;
                     message.Sender = messageData.Child("sender").Value.ToString();
                     message.Content = messageData.Child("content").Value.ToString();
+                    message.Time = messageData.Child("time").Value.ToString();
+                    message.Date = messageData.Child("date").Value.ToString();
                     messages.Add(message);
                 }
 
