@@ -4,6 +4,7 @@ using Xamarin.Forms.Xaml;
 using HowFar.Models;
 using HowFar.CustomInterfaces;
 using System.Collections.ObjectModel;
+using static HowFar.CustomElements.MessageBox;
 
 namespace HowFar.Pages
 {
@@ -30,6 +31,7 @@ namespace HowFar.Pages
         {
             base.OnAppearing();
             collectionView.ItemsSource = messageList;
+            collectionView.ScrollTo(messageList.Count - 1, -1, ScrollToPosition.End, true);
         }
 
         public void RetrieveData()
@@ -42,12 +44,13 @@ namespace HowFar.Pages
         {
             messageList = e.messages;
             collectionView.ItemsSource = messageList;
+            collectionView.ScrollTo(messageList.Count - 1, -1, ScrollToPosition.End, true);
         }
 
-        private void searchEntry_Completed(object sender, EventArgs e)
+        private void searchEntry_Completed(object sender, TextEventArgs e)
         {
-            this.sender.Send(new Message(true) { Sender = ((App)App.Current).Username, Content = searchEntry.Text });
-            searchEntry.Text = "";
+            this.sender.Send(new Message(true) { Sender = ((App)App.Current).Username, Content = e.Text});
+            messageBox.EntryText = "";
         }
 
         private async void Profile_Clicked(object sender, EventArgs e)

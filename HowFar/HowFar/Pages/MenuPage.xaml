@@ -13,20 +13,20 @@
                                               SentTemplate="{StaticResource SentMessageTemplate}"
                                               RecievedTemplate="{StaticResource RecievedMessageTemplate}"/>
     </ContentPage.Resources>
-    <StackLayout>
+    <StackLayout Spacing="0">
         <Button Text="Profile"
                 Clicked="Profile_Clicked"/>
         <CollectionView x:Name="collectionView" 
                         ItemTemplate="{StaticResource messageDataSelector}"
-                        SelectionMode="None">
+                        SelectionMode="None"
+                        ItemSizingStrategy="MeasureAllItems"
+                        Margin="5, 0">
             <CollectionView.ItemsLayout>
                 <LinearItemsLayout Orientation="Vertical"
-                                   ItemSpacing="5"/>
+                                   ItemSpacing="4"/>
             </CollectionView.ItemsLayout>
         </CollectionView>
-        <Entry x:Name="searchEntry"
-                       Placeholder="message.."
-                       VerticalOptions="End"
-                       Completed="searchEntry_Completed"/>
+        <elements:MessageBox x:Name="messageBox"
+                             TextCompleted="searchEntry_Completed"/>
     </StackLayout>
 </ContentPage>

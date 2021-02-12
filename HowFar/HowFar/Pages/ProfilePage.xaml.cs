@@ -19,7 +19,7 @@ namespace HowFar.Pages
             if (!string.IsNullOrWhiteSpace(usernameEntry.Text))
             {
                 Storage.GetInstance().SetUsername(usernameEntry.Text);
-                await Navigation.PopToRootAsync(true);
+                await Navigation.PopModalAsync(true);
             }
             else
             {
